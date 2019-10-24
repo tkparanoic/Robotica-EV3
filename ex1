@@ -1,0 +1,21 @@
+/*
+ \file		ex_4.c
+ \author	${user}
+ \date		${date}
+ \brief		Simple Hello World! for the Ev3
+*/
+
+#include <ev3.h>
+
+int main(void)
+{
+	InitEV3();
+	int x=30;
+	do {OnFwdReg([Motor], [x]);
+		x++;
+		wait (500_MS);}
+	while (OnFwdReg([Motor], [x<100]))
+
+	FreeEV3();
+	return 0;
+}
